@@ -1,0 +1,101 @@
+.two-column-row {
+	.item_1_2 {
+		padding:1.618rem;
+		h2 {
+			position: relative;
+			font-weight:300;
+			padding-bottom: 5px;
+			&:after {
+				content: "";
+			    width: 8vw;
+			    bottom: 0;
+			    left: 0;
+			    border-bottom: 3px solid #ff9933;
+			    position: absolute;
+			}
+		}
+		.tab-section {
+			.tab {
+			    overflow: hidden;
+			    border: none;
+			    background-color: transparent;
+
+			    button {
+			        background-color: inherit;
+			        float: left;
+			        border: none;
+			        outline: none;
+			        cursor: pointer;
+			        padding: 1.618rem;
+			        transition: 0.3s;
+			        border-radius: 0;
+			        font-size: 1em;
+			        
+			        &:hover {
+					    background-color: #ddd;
+					}
+					&.active {
+			        	border: 1px solid $blue;
+					    background-color: $blue;
+					    color:#fff;
+					}
+			    }
+			}
+			.tabcontent {
+			    display: none;
+			    padding: 0;
+			    border: 1px solid $blue;
+			    margin-top: -1px;
+			    animation: fadeEffect 1s;
+
+			    p {
+			    	&:first-child {
+						margin:0;
+			    	}
+			    }
+			    table {
+			    	padding: 1.618rem;
+			    	margin-bottom: 0;
+			    }
+			    a {
+			    	color:$red;
+			    	text-decoration: none;
+			    	&:hover {
+			    		color:$blue;
+			    	}
+			    }
+			}
+			@keyframes fadeEffect {
+			    from {opacity: 0;}
+			    to {opacity: 1;}
+			}
+		}
+		@include breakpoint(tablet) {
+			&.item_1_2 {
+				width:100%;
+				padding:1.618rem 0;
+
+				.tab {
+					button {
+						padding:12px;
+					}
+				}
+
+				iframe {
+					margin: 1px auto;
+					position: relative;
+					display: block;
+					width: calc(100% - 3px);
+				}
+			}
+		}
+		@include breakpoint(phablet) {
+			table, tbody, tr, td {
+				display:block;
+			}
+			td {
+				margin: .89em 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,107 @@
+.counter_row {
+	background-position: 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	.container-fw {
+		position: relative;
+
+		&:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 51, 102, .9);
+			z-index: 0;
+		}
+	}
+	.left_content, .right_content {
+		z-index: 1;
+		position: relative;
+		color: white;
+
+		&.item_1_3, &.item_2_3 {
+			@include breakpoint(laptop) {
+				width:100%;
+			}
+
+			.item_1_3 {
+				@include breakpoint(phablet) {
+					width: 100%;
+					margin: .89rem 0;
+				}
+			}
+		}
+	}
+	.left_content {
+		padding: 1.618rem;
+
+		@include breakpoint(phablet) {
+			font-size: 18px;
+
+			.white_heading {
+				font-size:25px;
+			}
+		}
+	}
+	.right_content {
+		.figure {
+			text-align: center;
+			text-transform: uppercase;
+
+			figure {
+				font-size: 4vw;
+				margin-bottom: 0;
+				line-height: 39px;
+				margin-top: 0;
+				padding-left: 1rem;
+
+				@include breakpoint(phablet) {
+					font-size: 30px;
+				}
+			}
+			.fig_cont {
+
+				img, figure {
+					display:inline-block;
+					vertical-align:bottom;
+					margin-bottom: .5rem;
+				}
+				div {
+					text-align: right;
+					padding: .5rem 0;
+					border-top: 5px solid white;
+					margin-top: .5rem;
+					font-weight: 300;
+				}
+				@include breakpoint(phablet) {
+					width:70%;
+				}
+			}
+			.preceding_text {
+				display:inline-block;
+				vertical-align:middle;
+				margin-left: 1rem;
+				@include breakpoint(phablet) {
+					width:25%;
+					margin-top:10%;
+				}
+			}
+			&:first-child {
+				.preceding_text {
+					font-size: 14px;
+				}
+			}
+			&:nth-child(2) {
+				.preceding_text {
+					font-size: 4.5vw;
+					@include breakpoint(phablet) {
+						font-size: 40px;
+					}
+				}
+			}
+		}
+	}
+}

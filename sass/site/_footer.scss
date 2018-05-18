@@ -1,0 +1,47 @@
+.site-footer {
+    .inner-container {
+        padding-top: 1.618rem;
+        border-top: 2px solid #ccc;
+        .foot-mod {
+            text-align: center;
+
+            a {
+                text-decoration: none;
+            }
+            
+            &.credits {
+                text-align:left;
+            }
+            &.site-info {
+                text-align:right;
+            }
+
+            &.item_1_3 {
+                @include breakpoint(laptop) {
+                    width:100%;
+                    margin:.89em 0;
+                    text-align:center;
+                }
+            }
+        }
+        #footer-menu {
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            margin: 0;
+            padding: 0;
+            li {
+                margin: 0 1.618rem;
+                list-style: none;
+                @include breakpoint(tablet) {
+                    margin:0 .89em;
+                }
+            }
+        }
+        &:after {
+            content:"";
+            display:table;
+            clear:both;
+        }
+    }
+}

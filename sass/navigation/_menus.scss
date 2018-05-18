@@ -1,0 +1,152 @@
+.main-navigation {
+	display: inline-block;
+	width: 60%;
+	vertical-align: middle;
+	text-align: right;
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+
+		ul {
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			float: left;
+			position: absolute;
+			top: 100%;
+			left: -999em;
+			z-index: 99999;
+			text-align: left;
+			padding: .5rem;
+			background: rgba(255,255,255,.85);
+			opacity: 0;
+			transition:.3s all ease;
+
+			ul {
+				left: -999em;
+				top: 0;
+			}
+
+			li {
+				transition:.3s all ease;
+				padding:.35rem .89rem;
+				&:hover > ul,
+				&.focus > ul {
+					left: 100%;
+					opacity: 1;
+					transition:.3s all ease;
+				}
+				&:hover {
+					background: $red;
+					color:#fff;
+					transition:.3s all ease;
+				}
+			}
+
+			a {
+				width: 200px;
+			}
+
+			:hover > a,
+			.focus > a {
+			}
+
+			a:hover,
+			a.focus {
+			}
+
+			&:before {
+				content: "";
+				width: 0px;
+				height: 0px;
+				border-bottom: 10px solid #fff;
+				border-left: 10px solid transparent;
+				border-right: 10px solid transparent;
+				border-top: 10px solid transparent;
+				position: absolute;
+				top: -20px;
+				opacity:1;
+			}
+		}
+
+		li:hover > ul,
+		li.focus > ul {
+			left: auto;
+			opacity: 1;
+			transition:.3s all ease;
+		}
+	}
+
+	li {
+		display:inline-block;
+		position: relative;
+		padding:.35rem .89rem;
+		text-align:left;
+		&:not(:first-child) {
+		    margin-left: 5vw;
+		}
+		&:hover {
+			background: $red;
+			transition:.3s all ease;
+		}
+		&:hover > a,
+		&.focus > a {
+			color:#fff;
+		}
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+		color:$red;
+	}
+
+	.menu-menu-header-container {
+		float:right;
+	}
+
+	.current_page_item > a,
+	.current-menu-item > a,
+	.current_page_ancestor > a,
+	.current-menu-ancestor > a {
+	}
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.site-main & {
+		margin: 0 0 1.5em;
+		overflow: hidden;
+	}
+
+	.nav-previous {
+		float: left;
+		width: 50%;
+	}
+
+	.nav-next {
+		float: right;
+		text-align: right;
+		width: 50%;
+	}
+}
+
+@media (max-width: 1024px) {
+   #site-navigation {
+      display: none !important;
+   }
+   .main-navigation {
+      li {
+		margin:0 !important;
+		display:block !important;
+		text-align:left;
+      }
+   }
+}
+@media (min-width: 1025px) {
+   #mm-site-navigation{
+      display: none !important;
+   }
+}

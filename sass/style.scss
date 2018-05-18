@@ -1,0 +1,148 @@
+/*!
+Theme Name: build/create - nrc
+Theme URI: http://underscores.me/
+Author: build/create
+Author URI: http://buildcreate.com
+Description: a custom wordpress theme for national realty centers
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: build-create-nrc
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+build/create - nrc is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+# Containers
+# Header
+# Flex Layouts
+	## Image Hero
+	## 3 Column CTAs
+	## Counter Row
+--------------------------------------------------------------*/
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@import "normalize";
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import "typography/typography";
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+@import "elements/elements";
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+@import "forms/forms";
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+@import "navigation/navigation";
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+@import "modules/accessibility";
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+@import "modules/alignments";
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+@import "modules/clearings";
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+@import "site/secondary/widgets";
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+@import "site/site";
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+@import "modules/infinite-scroll";
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+@import "media/media";
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+@import "site/header";
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+@import "site/footer";
+
+/*--------------------------------------------------------------
+# Containers
+--------------------------------------------------------------*/
+@import "site/containers";
+
+/*--------------------------------------------------------------
+# Containers
+--------------------------------------------------------------*/
+@import "site/flexbox";
+
+/*--------------------------------------------------------------
+# Flex Layouts
+--------------------------------------------------------------*/
+@import "flex-layouts/image-hero";
+@import "flex-layouts/3-column-cta";
+@import "flex-layouts/counter-row";
+@import "flex-layouts/full-width-cta";
+@import "flex-layouts/our-locations";
+@import "flex-layouts/form-section";
+@import "flex-layouts/content-image-module";
+@import "flex-layouts/double-column-row-heading";
+@import "flex-layouts/gray-large-text-block";
+@import "flex-layouts/review-feed";
+@import "flex-layouts/expandable-feature-row";
+@import "flex-layouts/2-column-row";

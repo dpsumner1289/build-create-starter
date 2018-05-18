@@ -1,0 +1,29 @@
+.container {
+	margin-left:auto;
+	margin-right:auto;
+	padding:1.618em;
+	width:100%;
+	&.container-xsm {
+		max-width:600px;
+	}
+	&.container-xs-sm {
+		max-width:750px;
+	}
+	&.container-sm {
+		max-width:850px;
+	}
+	&.container-md {
+		max-width:1050px;
+	}
+	&.container-lg {
+		max-width:1440px;
+	}
+	&.container-fw {
+		max-width:100%;
+	}
+	&:after {
+		display: table;
+		clear: both;
+		content: "";
+	}
+}

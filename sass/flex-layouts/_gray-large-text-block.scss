@@ -1,0 +1,12 @@
+.gray-large-text {
+	background-color: #ececec;
+	font-size: 30px;
+	font-weight:100;
+
+	@include breakpoint(tablet) {
+		font-size:25px;
+	}
+	@include breakpoint(phablet) {
+		font-size:20px;
+	}
+}

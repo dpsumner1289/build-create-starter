@@ -1,0 +1,99 @@
+.gform_wrapper {
+    ul.gform_fields {
+        li.gfield {
+            margin-top: 10px;
+
+            input, select {
+                border-radius: 0;
+                border:1px solid #ccc;
+                background: #fbfbfb;
+                margin-top: 0;
+            }
+            select {
+                padding: 5px 4px;
+            }
+
+            .gfield_label {
+                color:$blue;
+                margin: .89rem 0;
+                &[for="input_1_4"] {
+                    display:block;
+                }
+            }
+            &.gf_right_half {
+                padding-right: 0;
+                padding-left: 7px;
+                @include breakpoint(phablet) {
+                    padding-left:0;
+                }
+            }
+            &.gf_left_half {
+                padding-right: 9px;
+                @include breakpoint(phablet) {
+                    padding-right:0;
+                }
+            }
+            &#field_1_1 {
+                padding-right:0;
+            }
+            &#field_1_4 {
+                .ginput_container_select {
+                    display: inline-block;
+                    min-width: 50%;
+                    position: relative;
+
+                    select {
+                        width:100%;
+                    }
+
+                    // &:after {
+                    //     font-family: 'Font Awesome 5 Free';
+                    //     content:"\f107";
+                    //     position: absolute;
+                    //     right: 2.5px;
+                    //     top: 11%;
+                    //     transition: .3s all ease;
+                    //     font-size: 16px;
+                    // }
+                    // &:focus, &:active {
+                    //     &:after {
+                    //         transform: rotate(180deg);
+                    //         transition: .3s all ease;
+                    //     }
+                    // }
+                }
+            }
+        }
+        li.centerfield {
+            text-align: center;
+        }
+        span.name_first, span.name_last {
+            label {
+                display:none !important;
+            }
+        }
+    }
+    .gform_footer {
+        text-align: center;
+
+        input {
+            background: $red;
+            border-radius: 4px;
+            padding: .9rem 1.618rem;
+            color: #fff;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-color: $red;
+            transition: .3s all ease;
+
+            &:hover {
+                transition:.3s all ease;
+                background: #fff;
+                color:$red;
+            }
+            &:focus {
+                outline: #333 auto 5px;
+            }
+        }
+    }
+}
