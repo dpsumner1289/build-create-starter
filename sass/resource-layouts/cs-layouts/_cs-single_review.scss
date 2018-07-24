@@ -1,0 +1,50 @@
+.single_review {
+    background-position: 50% 0%;
+    background-size:cover;
+
+    .filtered {
+        color:$white;
+        position: relative;
+        align-items: center;
+        .quote_content {
+            position: relative;
+            z-index: 2;
+            max-width:450px;
+            padding: 20% 5%;
+            font-size:$golden_ratio;
+            font-weight:300;
+
+            .quote_wrap {
+                padding-left:4.508rem;
+                position: relative;
+                .author_meta {
+                    background:$red;
+                    padding:$half-gr;
+                    font-size: 1rem;
+                    small {
+                        display:block;
+                    }
+                }
+                &:after {
+                    content: "\201C";
+                    position: absolute;
+                    left: -20px;
+                    font-size: 280px;
+                    top: 0;
+                    line-height: 235px;
+                    height: 100%;
+                }
+            }
+        }
+        &:after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: rgba($gunmetal, .75);
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+    }
+}

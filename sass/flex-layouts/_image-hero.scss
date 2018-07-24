@@ -1,142 +1,188 @@
 .flex-hero {
-	width: 100%;
-	justify-content: center;
-	align-items: center;
-	position: relative;
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
-	background-size: cover;
-
-	&.fs-full-screen {
-		min-height:100vh;
-	}
-	&.fs-eighty {
-		min-height:80vh;
-	}
-	&.overlay-1 {
-		.outer-wrapper {
-			z-index: 1;
-			position: relative;
-		}
-
-		&:after {
-			background: rgba(255,255,255,.75);
-			content: "";
-			height: 100%;
-			width: 100%;
-			position: absolute;
-			left: 0;
-			top: 0;
-		}
-	}
-
-	&.border-red {
-		border-bottom:10px solid #993333;
-	}
-	&.border-blue {
-		border-bottom:10px solid $blue;
-	}
-	&.bwidth-hundred {
-
-	}
-	&.bwidth-seventyfive {
-		
-	}
-
-	.outer-wrapper {
-		text-align: center;
-
-		h1 {
-			font-size: 55px;
-			font-weight: lighter;
-			color:$blue;
-			margin: 25px 0;
-			padding-bottom: 25px;
-			line-height:1.2em;	
-			position: relative;		
-			p {
-				margin-bottom: 0;
-
-				strong {
-					font-weight:bold;
-				}
-			}
-			&.underline-1 {
-				border-bottom: 1.5px solid #666;
-			}
-			&.add_padding_above {
-				padding-top: 20%;
-				margin: 25px 0;
-				padding-bottom: 25px;
-			}
-			@include breakpoint(phablet) {
-			    font-size:40px;
-			    padding-top: 25px;
-			}
-		}
-		p.narrow {
-		    margin: 0 auto;
-		    max-width: 400px;
-		    font-size: 25px;
-		    @include breakpoint(phablet) {
-		        font-size:20px;
-		    }
-		}
-		.hero_buttons {
-			padding-top: 6vh;
-
-			a.button {
-				width: 48%;
-				margin-right: 1%;
-
-				@include breakpoint(phablet) {
-					margin-right: 0;
-				    width: 100%;
-				    margin-top: 2%;
-				}
-			}
-			@include breakpoint(phablet) {
-				padding-top:4vh;
-			}
-		}
-	}
-	.underlined {
-		margin-bottom: 1.618rem;
-		padding-bottom: 1.618rem;
-		&:after {
-			border-bottom: 4px solid $red;
-		}
-	}
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &.fs-full-screen {
+        min-height: 100vh;
+    }
+    &.fs-eighty {
+        min-height: 80vh;
+    }
+    &.overlay-1 {
+        .outer-wrapper {
+            z-index: 1;
+            position: relative;
+        }
+        &:after {
+            background: rgba(255, 255, 255, .75);
+            content: "";
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+    .outer-wrapper {
+        text-align: center;
+        h1 {
+            font-size: 35px;
+            font-weight: lighter;
+            color: $gunmetal;
+            margin: 25px 0;
+            padding-bottom: 25px;
+            line-height: 1.2em;
+            position: relative;
+            p {
+                margin-bottom: 0;
+                strong {
+                    font-weight: bold;
+                }
+            }
+            &.white {
+                color: $white;
+                &:after {
+                    border-bottom: 4px solid $white;
+                }
+            }
+            &.gray {
+                color: $gunmetal;
+                &:after {
+                    border-bottom: 4px solid $gunmetal;
+                }
+            }
+            &.underline-1 {
+                margin-bottom: 12px;
+                padding-bottom: 9px;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    width: 130px;
+                    left: 50%;
+                    margin-left: -65px;
+                    bottom: 0;
+                }
+            }
+            &.add_padding_above {
+                padding-top: 20%;
+                margin: 25px 0;
+                padding-bottom: 25px;
+            }
+            @include breakpoint(phablet) {
+                font-size: 40px;
+                margin-top: 0;
+                padding-top: 0;
+            }
+        }
+        a.social-visit {
+            color: #fff;
+            border: 1px solid;
+            padding: .89rem;
+            display: inline-block;
+            margin-top: 1.618rem;
+            text-decoration: none;
+            @include ease();
+            i {
+                margin-right: 3px;
+            }
+            &:hover {
+                @include ease();
+                border-color: $red;
+            }
+        }
+        p.narrow {
+            margin: 0 auto;
+            max-width: 400px;
+            font-size: 20px;
+            font-style: italic;
+            line-height: 1.6rem;
+            &.white {
+                color: $white;
+            }
+            &.gray {
+                color: $gunmetal;
+            }
+            @include breakpoint(phablet) {
+                font-size: 15px;
+            }
+        }
+        .hero_buttons {
+            padding-top: 6vh;
+            a.button {
+                width: 48%;
+                margin-right: 1%;
+                padding: 0.89rem;
+                &:nth-child(even) {
+                    background: $blue;
+                }
+                &:nth-child(odd) {
+                    background: $red;
+                }
+                @include breakpoint(phablet) {
+                    margin-right: 0;
+                    width: 100%;
+                    margin-top: 2%;
+                }
+            }
+            @include breakpoint(phablet) {
+                padding-top: 4vh;
+            }
+        }
+    }
+    .underlined {
+        margin-bottom: 1.618rem;
+        padding-bottom: 1.618rem;
+        &:after {
+            border-bottom: 4px solid $red;
+        }
+    }
 }
 
-body:not(.home){
-	.flex-hero {
-		min-height: 400px;
-		h1 {
-			font-size: 47.5px;
-			padding-top:10%;
-			padding-bottom:0;
-			margin-bottom:0;
-			text-transform:uppercase;
-			@include breakpoint(phablet) {
-				font-size: 30px;
-			}
-		}
-		p.narrow {
-		    margin: 0 auto;
-		    max-width: 100%;
-		    font-size: 24px;
+body.home {
+    .flex-hero {
+        padding: 3% 0 25%;
+    }
+}
+body:not(.home) {
+    .flex-hero {
+        min-height: 400px;
+        h1 {
+            font-size: 47.5px;
+            padding-bottom: 0;
+            margin-bottom: 0;
+            text-transform: uppercase;
+        }
+        p.narrow {
+            margin: 0 auto;
+            max-width: 100%;
+            font-size: 24px;
+        }
+        &.overlay-1 {
+            &:after {
+                background: rgba(255, 255, 255, .75);
+            }
+        }
+        @include breakpoint(tablet) {
+            min-height:0;
+        }
+        @include breakpoint(phablet) {
+            h1 {
+                font-size: 30px;
+                padding-top: 0;
+                margin-top: 0;
 
-		    @include breakpoint(phablet) {
-		    	font-size: 18px;
-		    	margin-top: .89rem;
-		    }
-		}
-
-		&.overlay-1 {
-			&:after {
-				background: rgba(255,255,255,.75);
-			}
-		}
-	}
+                p {
+                    margin-top: 0;
+                }
+            }
+            p.narrow {
+                font-size: 18px;
+                margin-top: .89rem;
+            }
+        }
+    }
 }

@@ -16,105 +16,45 @@ a {
 	&:active {
 		outline: 0;
 	}
-
-	&.button {
-	    display: inline-block;
-	    padding: 1em;
-	    color: $red;
-	    text-decoration: none;
-	    background: #fff;
-	    box-shadow: 2px 2px 5px #c3c3c3;
-	    border-radius: 3px;
-	    text-transform: uppercase;
-	    position:relative;
-	    vertical-align:middle;
-	    
-	    &::before,
-	      &::after {
-	        box-sizing: inherit;
-	        content: '';
-	        position: absolute;
-	        width: 100%;
-	        height: 100%;
-	      }
-	      &.draw {
-	          transition: color 0.15s;
-
-	        &::before,
-	        &::after {
-	          // Set border to invisible, so we don't see a 4px border on a 0x0 element before the transition starts
-	          border: 2px solid transparent;
-	          border-radius:3px;
-	          width: 0;
-	          height: 0;
-	        }
-
-	        // This covers the top & right borders (expands right, then down)
-	        &::before {
-	          top: 0;
-	          left: 0;
-	        }
-
-	        // And this the bottom & left borders (expands left, then up)
-	        &::after {
-	          bottom: 0;
-	          right: 0;
-	        }
-	        
-	        &:hover {
-	          color: $red;
-	        }
-
-	        // Hover styles
-	        &:hover::before,
-	        &:hover::after {
-	          width: 100%;
-	          height: 100%;
-	        }
-
-	        &:hover::before {
-	          border-top-color: $red; // Make borders visible
-	          border-right-color: $red;
-	          transition:
-	            width 0.15s ease-out, // Width expands first
-	            height 0.15s ease-out 0.15s; // And then height
-	        }
-
-	        &:hover::after {
-	          border-bottom-color: $red; // Make borders visible
-	          border-left-color: $red;
-	          transition:
-	            border-color 0s ease-out 0.35s, // Wait for ::before to finish before showing border
-	            width 0.15s ease-out 0.5s, // And then exanding width
-	            height 0.15s ease-out 0.55s; // And finally height
-	        }
-	      }
-	      // Inherits from .draw
-	      &.meet {
-	        
-	        &:hover {
-	          color: $red;
-	        }
-
-	        // Start ::after in same position as ::before
-	        &::after {
-	          top: 0;
-	          left: 0;
-	        }
-
-	        // Change colors
-	        &:hover::before {
-	          border-top-color: $red;
-	          border-right-color: $red;
-	        }
-
-	        &:hover::after {
-	          border-bottom-color: $red;
-	          border-left-color: $red;
-	          transition: // Animate height first, then width
-	            height 0.25s ease-out,
-	            width 0.25s ease-out 0.25s;
-	        }
-	    }
+	&.tel {
+		text-decoration: none;
+		color: $red;
+		vertical-align: middle;
 	}
+	&.button {
+		display: inline-block;
+		color: $white;
+		text-decoration: none;
+		text-transform: uppercase;
+		position:relative;
+		vertical-align:middle;
+		letter-spacing: 1px;
+
+		&.red {
+			background:$red;
+			padding: 10px 20px 8px;
+			line-height: 1.3rem;
+		}
+		&.blue {
+			background:$blue;
+			padding: $half-gr $golden_ratio;
+			line-height: 1.3rem;
+		}
+		&:hover {
+			animation-name: pulse_animation;
+			animation-duration: 700ms;
+			transform-origin:70% 70%;
+			animation-iteration-count: 1;
+			animation-timing-function: linear;
+		}
+	}
+}
+@keyframes pulse_animation {
+	0% { transform: scale(1); }
+	30% { transform: scale(1.05); }
+	40% { transform: scale(1.08); }
+	50% { transform: scale(1.1); }
+	60% { transform: scale(1.08); }
+	70% { transform: scale(1.05); }
+	100% { transform: scale(1); }
 }

@@ -1,0 +1,28 @@
+.cta_button {
+    .container-md {
+        margin-top: $golden_ratio;
+        padding: 3.236rem $golden_ratio;
+        border-top: 1px solid $red;
+
+        @include breakpoint(phablet) {
+            padding:0;
+        }
+    }
+    h2 {
+        @include section-heading($blue, center);
+        text-transform: none;
+        font-weight:300;
+    }
+    a.button {
+        border:2px solid $red;
+        color:$red;
+        padding: $half-gr 3.236rem;
+        font-size: 25px;
+        font-weight: 300;
+        margin-top: $golden_ratio;
+
+        @include breakpoint(phablet) {
+            padding:$half-gr $half-gr;
+        }
+    }
+}

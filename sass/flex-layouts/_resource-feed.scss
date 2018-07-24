@@ -1,0 +1,114 @@
+.resource_feed {
+    .container {
+        justify-content: flex-start;
+        h3 {
+            width: 100%;
+            display: block;
+            border-bottom: 1.5px solid;
+            font-weight: lighter;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+
+            &.fpissues {
+                color:$blue;
+            }
+            &.white-paper {
+                color:$gunmetal;
+            }
+            &.video {
+                color:$red;
+            }
+            &:after {
+                display:none;
+            }
+        }
+        div.fpissue {
+            padding:$golden_ratio;
+
+            .fpissue_cont {
+                position: relative;
+                min-height:200px;
+                background-color:$gold;
+                justify-content: center;
+                align-content: center;
+                z-index: 1;
+                overflow: hidden;
+                text-align: center;
+                .issue_num {
+                    display:block;
+                    width:100%;
+                    color:$white;
+                }
+                .download {
+                    position: absolute;
+                    background-color:$blue;
+                    width:100%;
+                    height:100%;
+                    z-index: 2;
+                    left:0;
+                    bottom:-100%;
+                    @include ease();
+
+                    a {
+                        color:$white;
+                        text-decoration: none;
+                        display:block;
+                        text-align: center;
+
+                        &.bounce {
+                            margin-bottom:$golden_ratio;
+                        }
+
+                        i {
+                            margin-right:5px;
+                            &.fa-reply:before {
+                                content: "\f3e5";
+                            }
+                        }
+                    }
+                }
+    
+                &:hover {
+                    .download {
+                        bottom:0;
+                        @include ease();
+                    }
+                }
+            }
+        }
+
+        .item_1_3 {
+            div.video {
+                position: relative;
+                padding-bottom: 225px;
+                overflow: hidden;
+                max-width: 100%;
+                height: auto;
+    
+                iframe, object, embed {
+                    position: absolute;
+                    top: 2%;
+                    left: 2%;
+                    width: 96%;
+                    height: 96%;
+                }
+            }
+            &.whitepaper {
+                padding:$golden_ratio $half-gr;
+                i.fa {
+                    margin-left:20px;
+                }
+            }
+
+            a.vidtitle, a.wptitle {
+                display:block;
+                text-align: left;
+                text-decoration: none;
+                margin-bottom: 5px;
+            }
+            i.published {
+                color:$gray;
+            }
+        }
+    }
+}

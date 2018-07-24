@@ -1,0 +1,27 @@
+section.counter_row_2 {
+    background:$warmth;
+    .num {
+        .figure {
+            color:$blue;
+            font-size:4vw;
+            max-width: 100%;
+            margin: 0;
+
+            &:not(:last-child) {
+                border-right:1px solid $gunmetal;
+            }
+            figure {
+                line-height:55px;
+            }
+            small {
+                color:$gunmetal;
+                font-size:small;
+                margin-top: 0 !important;
+                padding-top: 0 !important;
+                p {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}

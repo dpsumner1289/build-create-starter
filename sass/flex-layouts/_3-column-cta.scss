@@ -1,68 +1,118 @@
 .cta_3 {
-	.outer-wrapper {
-		.inner-wrapper {
-			.item_1_3 {
-				padding: 3.236rem;
-				text-align: center;
+    background-color:$warmth;
+    .container-md-lg {
+        a.learn-more {
+            text-align: center;
+            display: inline-block;
+            width:80%;
+            text-decoration: none;
+            color: $blue;
+            padding-top: $golden_ratio;
+            border-top: 1px solid $gunmetal;
+            font-weight:lighter;
 
-				a.content-a {
-					color:#333;
-					text-decoration: none;
+        }
+        h4 {
+            color:$red;
+        }
+        img {
+            max-height:220px;
+        }
+    }
+    .container-md {
+        padding-top:0;
 
-					&:after {
-						display:table;
-						clear:both;
-						content:"";
-					}
-				}
-				
-				img {
-				    transition: .3s all ease;
-				}
-				h4 {
-					text-transform:uppercase;
-					font-size: 25px;
-					font-weight: lighter;
-				}
-				aside {
-					text-align:left;
-					padding-bottom: .89em;
-					margin-bottom: .89em;
-					border-bottom: 1px solid #333;
+        a.learn-more {
+            text-align: left;
+            display: block;
+            span {
+                @include ease();
+                i {
+                    padding-left: 3px;
+                }
+            }
+            &:hover>span {
+                margin-left: 1em;
+                @include ease();
+            }
+            aside {
+                border-bottom: 1px solid $gunmetal;
+            }
+        }
+    }
+    .outer-wrapper {
+        .inner-wrapper {
+            .item_1_3 {
+                padding: $golden_ratio 0;
+                text-align: center;
+                a.content-a {
+                    color: $gunmetal;
+                    text-decoration: none;
+                    &:after {
+                        display: table;
+                        clear: both;
+                        content: "";
+                    }
+                }
+                img {
+                    @include ease();
+                }
+                h4 {
+                    font-size: 20px;
+                    font-weight: lighter;
+                }
+                aside {
+                    text-align: left;
+                    padding: $half-gr;
+                    margin-bottom: $half-gr;
+                    p:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+                >a.learn-more {
+                    text-decoration: none;
+                    color: $blue;
+                }
+                &:hover img {
+                    transform: scale(1.1);
+                    @include ease();
+                }
+                @include breakpoint(tablet) {
+                    width: 50%;
+                }
+                @include breakpoint(phablet) {
+                    width: 100%;
+                    padding: 1.618rem;
+                }
+            }
+        }
+    }
+    .button-row {
+        text-align: center;
+        a.button {
+            font-size: 20px;
+            font-weight: lighter;
+            padding: $half-gr $golden_ratio;
+        }
+    }
+    &.blue {
+        h4 {
+            color:$white;
+        }
+        .button-row {
+            a.button {
+                background:$blue;
+                border:1px solid $white;
+            }
+        }
+    }
 
+    &.gunmetal {
+        background-color:$gunmetal;
+        color:$white;
 
-					p:last-child {
-						margin-bottom:0;
-					}
-				}
-				>a.learn-more {
-					text-align:left;
-					display: block;
-					text-decoration: none;
-					color:$blue;
-					span {
-					    transition: .3s all ease;
-					    i {
-					    	padding-left:3px;
-					    }
-					}
-					&:hover > span {
-					    margin-left: 1em;
-					    transition: .3s all ease;
-					}
-				}
-				&:hover img {
-				    transform: scale(1.1);
-				    transition: .3s all ease;
-				}
-				@include breakpoint(tablet) {
-					width:50%;
-				}
-				@include breakpoint(phablet) {
-					width:100%;
-					padding:1.618rem;
-				}
-			}	
-		}
-	}
+        h4 {
+            color:$white;
+        }
+    }
 }

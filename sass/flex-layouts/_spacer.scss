@@ -1,0 +1,17 @@
+section.spacer {
+    width:100%;
+    display:block;
+    padding:$golden_ratio;
+    &.blue {
+        background-color:$blue;
+    }
+    &.red {
+        background-color:$red;
+    }
+    &.warmth {
+        background-color:$warmth;
+    }
+    &.white {
+        background-color:$white;
+    }
+}

@@ -1,0 +1,14 @@
+.it_1_2_3 {
+    .item_2_3 {
+        h2 {
+            @include section-heading($blue, left);
+            font-weight:300;
+            text-transform: none;
+        }
+        h3 {
+            &:after {
+                display:none;
+            }
+        }
+    }
+}

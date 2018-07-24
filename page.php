@@ -16,6 +16,8 @@ get_header();
 
 if(have_posts()): while(have_posts()): the_post();
 
+	get_template_part('template-parts-resources/rex_content');
+	get_template_part('template-parts-resources/case-studies/rex-case_study');
 	get_template_part('template-parts/flexible_content');
 
 endwhile; endif;

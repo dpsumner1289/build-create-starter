@@ -1,0 +1,152 @@
+.hover_features_2 {
+    background:$warmth;
+    &:not(.no_hover) {
+        @include hover-caption('.hover-feature', '.feature_info', figure, 1.1, .3s);
+    }
+    .container {
+
+        >h2 {
+            @include section-heading($gunmetal, center);
+        }
+        .hover-feature {
+            padding:$half-gr;
+    
+            figure {
+                img {
+                    width:100%;
+                }
+            }
+            .feature_info {
+                background: rgba($blue, .85);
+                color: $white;
+                padding:$half-gr;
+                width:100%;
+                left:0;
+    
+                >h3 {
+                    color:$white;
+                    padding:0;
+                    margin:0;
+                    font-weight: lighter;
+                    font-size: 25px;
+
+                    &:after {
+                        display:none;
+                    }
+                }
+    
+                .item_1_3 {
+                    text-align: center;
+
+                    a {
+                        padding: .5rem $half-gr;
+                        border: 2px solid $white;
+                        margin-top: $golden_ratio;
+                    }
+                }
+            }
+            &.warmth {
+                .feature_info {
+                    background: rgba($warmth, .85);
+                    color:$gunmetal;
+                >h3 {
+                    color:$blue;
+                }
+                .item_1_3 {
+                    a {
+                        border: 2px solid $red;
+                        background-color:$red;
+                    }
+                }
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 50%;
+                    border-top: 6px solid $red; 
+                }
+                }
+            }
+            &.white {
+                .feature_info {
+                    color:$gunmetal;
+                    background: rgba($white, .85);
+
+                    >h3 {
+                        color:$blue;
+                    }
+                    .item_1_3 {
+                        a {
+                            border: 2px solid $red;
+                            background-color:$red;
+                        }
+                    }
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 50%;
+                        border-top: 6px solid $red; 
+                    }
+                }
+            }
+        }
+    }
+    &.blue {
+        .container {
+            >h2 {
+                @include section-heading($white, center);
+            }
+        }
+    }
+    &.gunmetal {
+        background-color: $gunmetal;
+
+        .container {
+            >h2 {
+                @include section-heading($white, center);
+            }
+        }
+    }
+
+    &.no_hover {
+        .container {
+            .feature-section {
+                justify-content: space-around;
+
+                .hover-feature {
+                    position: relative;
+                    width: 48%;
+                    flex-basis: 48%;
+                    .feature_info {
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        right: 0;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        padding:$golden_ratio;
+
+                        .finfo_bottom {
+                            flex-direction: column;
+                            -webkit-flex-flow: column wrap;
+
+                            .description {
+                                width: 100%;
+                                flex-basis: 100%;
+                            }
+                            .button_cont {
+                                width: 100%;
+                                flex-basis: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

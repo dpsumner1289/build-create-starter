@@ -2,6 +2,7 @@
 global $flex_content;
 
 $background_color = $flex_content['background_color'];
+$container = $flex_content['container_width'];
 $content_direction = $flex_content['content_direction'];
 
 $content = $flex_content['content'];
@@ -31,8 +32,8 @@ if($image_video === 'image') {
 
 
 
-<div class="content_image_module <?php echo esc_html( $background_color ); ?>">
-    <div class="container container-lg flex row">
+<section class="content_image_module">
+    <div class="container <?php echo $container; ?> flex row vc <?php echo esc_html( $background_color ); ?>">
     
         <?php
         if($content_direction === 'image_left'){
@@ -67,4 +68,4 @@ if($image_video === 'image') {
         }
         ?>
     </div>
-</div>
+</section>

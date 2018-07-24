@@ -1,0 +1,92 @@
+.resource_archive_hero {
+    background:$gunmetal;
+
+    .container-80 {
+        background-position: 50%;
+        background-size: cover;
+        margin-bottom: -5%;
+        z-index: 1;
+        position: relative;
+        padding-top: 0;
+        padding-bottom: 0;
+
+        .content-container {
+            position: relative;
+            min-height: 72vh;
+            
+            .cblock {
+                position: absolute;
+                max-width: 300px;
+                padding:$half-gr;
+                color:$white;
+    
+                &.primary-block {
+                    left:0;
+                    top:15%;
+
+                    h2.cblock-heading {
+                        font-size: 36px;
+                    }
+                }
+                &.secondary-block {
+                    right:0;
+                    bottom:-15%;
+                }
+
+                &.white {
+                    background-color:$white;
+                    color:$gunmetal;
+
+                    h2.cblock-heading {
+                        @include section-heading($blue, left);
+                        margin-top: 0;
+
+                        &:after {
+                            width:50%;
+                        }
+                    }
+                }
+                &.blue {
+                    background-color:$blue;
+                }
+                &.red {
+                    background-color:$red;
+                }
+    
+                h2.cblock-heading {
+                    @include section-heading($white, left);
+                    text-transform: none;
+                    margin-top: 0;
+                }
+
+                @include breakpoint(tablet) {
+                    position: relative;
+                }
+            }
+            @include breakpoint(tablet) {
+                max-width:100%;
+                display: -webkit-box;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                padding:$golden_ratio 0;
+                justify-content: space-around;
+
+                h2 {
+                    font-size: 22.5px !important;
+                }
+            }
+            @include breakpoint(phablet) {
+                flex-direction: column;
+
+                .primary-block {
+                    margin-bottom: $golden_ratio;
+                }
+            }
+        }
+        @include breakpoint(tablet) {
+            max-width: 100%;
+        }
+    }
+}

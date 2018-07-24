@@ -1,0 +1,74 @@
+.process_row {
+    background-color:$gray;
+    background-size: contain;
+    background-position: right center;
+    background-repeat: no-repeat;
+    padding: 5% $golden_ratio;
+
+    .container-fw {
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+    .item_2_3 {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        .process-step {
+            width:50%;
+            -webkit-flex-flow: row;
+
+            .process {
+                color:$white;
+                padding:$half-gr;
+
+                h4 {
+                    color:$white;
+                }
+            }
+            &:nth-child(odd) {
+                margin-top: -10%;
+            }
+            &:nth-child(even) {
+                margin-bottom: -10%;
+            }
+            &:first-child {
+                margin-bottom:10%;
+            }
+            &:last-child {
+                margin-top:10%;
+            }
+        }
+    }
+    .item_1_3 {
+        h2 {
+            @include section-heading($white, left);
+        }
+        .content {
+            color:$white;
+        }
+    }
+    @include breakpoint(tablet) {
+        .item_1_3, .item_2_3 {
+            width:100% !important;
+            flex-basis: 100% !important;
+        }
+        .item_1_3 {
+            margin-top: 5%;
+        }
+    }
+    @include breakpoint(phablet) {
+        padding:0 !important;
+        background-position: right bottom !important;
+
+        .container {
+            padding-top: $golden_ratio !important;
+            padding-bottom: $golden_ratio !important;
+        }
+        .process-step {
+            margin-top: 2% !important;
+            margin-bottom: 2% !important;
+            width:100% !important;
+        }
+    }
+}

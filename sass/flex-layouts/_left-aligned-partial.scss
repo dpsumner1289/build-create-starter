@@ -1,0 +1,15 @@
+.left_aligned_partial {
+    padding-top: 5%;
+    background-color:$warmth;
+    h2 {
+        @include section-heading($red, left);
+        font-size: 36px;
+    }
+
+    @include breakpoint(tablet) {
+        .left_aligned {
+            flex-basis:100% !important;
+            width:100% !important;
+        }
+    }
+}

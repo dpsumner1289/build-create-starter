@@ -1,0 +1,11 @@
+.two_column_content {
+    .item_1_2 {
+        padding:0 $golden_ratio;
+
+        h3 {
+            &:after {
+                display:none;
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+.horizontal_content {
+    background-color:$warmth;
+    color:$gunmetal;
+    h2 {
+        @include section-heading($gunmetal, left);
+        text-transform: none;
+        margin-top: 1rem;
+    }
+    .container {
+        justify-content: flex-start;
+    }
+}

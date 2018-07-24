@@ -1,0 +1,5 @@
+.grid {
+    display:grid;
+    grid-template-columns: repeat(22, calc(100%/22));
+    grid-template-rows: repeat(10, 10%);
+}

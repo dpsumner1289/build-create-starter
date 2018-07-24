@@ -1,24 +1,58 @@
 .site-footer {
+    background: $red;
+    color:$white;
     .inner-container {
-        padding-top: 1.618rem;
-        border-top: 2px solid #ccc;
         .foot-mod {
             text-align: center;
 
             a {
                 text-decoration: none;
+                color:$white;
+
+                &.social-icon-footer {
+                    @include ease();
+                    &:not(:first-child) {
+                        margin-left: .89rem;
+                    }
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+
+            p {
+                margin-bottom:0;
+                margin-top: 10px;
             }
             
             &.credits {
                 text-align:left;
+            }
+            &.menu-area {
+                img {
+                    margin-top:1.618rem;
+                }
             }
             &.site-info {
                 text-align:right;
             }
 
             &.item_1_3 {
+                &.credits, &.site-info {
+                    color:rgba($white, .5);
+                    a {
+                        color:rgba($white, .5);
+                        @include ease();
+
+                        &:hover {
+                            color:$white;
+                            @include ease();
+                        }
+                    }
+                }
                 @include breakpoint(laptop) {
                     width:100%;
+                    flex-basis:100%;
                     margin:.89em 0;
                     text-align:center;
                 }

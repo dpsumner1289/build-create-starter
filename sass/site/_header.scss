@@ -1,33 +1,18 @@
 .site-header {
-	z-index:2;
-	position:absolute;
-	justify-content: space-between;
-
+	padding: 0;
+	align-items: flex-start;
+	background:$white;
+	-webkit-flex-flow: row !important;
+	.container-md-lg {
+		padding: 0;
+		-webkit-flex-flow: row;
+	}
 	.site-branding {
-		width: 35%;
-
-		.logo-anchor {
-			width: 50%;
-		}
+		justify-content: flex-start;
+		padding: .89rem;
 
 		.menu-bars {
 			display:none;
-		}
-
-		span {
-			width:50%;
-			&:after {
-				content: "Careers";
-			    height: 100%;
-			    border-left: 1px solid;
-			    margin-left: 3vw;
-			    padding: 1vw 0 1vw 3vw;
-			    font-size: 23px;
-			    color: #990000;
-			    text-transform: uppercase;
-			    letter-spacing: 3px;
-			    font-weight: lighter;
-			}
 		}
 		@include breakpoint(laptop) {
 			width:100%;
@@ -35,6 +20,7 @@
 			.menu-bars {
 				display: inline-flex;
 				width:20%;
+				margin-left: auto;
 				text-decoration: none;
 				font-size: 25px;
 				margin-bottom: 2px;
@@ -43,9 +29,18 @@
 					margin-left: auto;
 				}
 			}
+		}
+	}
+	.nav-section {
+		justify-content: flex-end;
 
-			span, .logo-anchor {
-				width:40%;
+		.top-bar {
+			width:100%;
+			text-align: right;
+
+			.tel {
+				vertical-align: middle;
+				margin: 0 15px;
 			}
 		}
 	}

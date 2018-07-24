@@ -1,0 +1,14 @@
+.half_content {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right center;
+
+    .block {
+        a.button {
+            padding:$half-gr $golden_ratio;
+        }
+        @include breakpoint(phablet) {
+            text-align: center;
+        }
+    }
+}

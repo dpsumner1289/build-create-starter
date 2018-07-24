@@ -1,0 +1,92 @@
+.fp_cta_post {
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .row {
+        justify-content: flex-start;
+        align-items: center;
+        padding:8px;
+        background-color:rgba($blue, .88);
+        width:100%;
+        margin-top: -3.236rem;
+
+        #issue {
+            text-transform: uppercase;
+            color: white;
+            margin-left: $half-gr;
+            font-size: $half-gr;
+            font-weight: 300;
+        }
+
+        img {
+            max-width:125px;
+            @include breakpoint(phablet) {
+                max-width: 95px;
+            }
+        }
+    }
+    .item_1_2 {
+        padding:$half-gr;
+        color:$white;
+        z-index: 1;
+
+        .gform_wrapper {
+            margin:0 !important;
+            
+            .gfield {
+                margin:0 !important;
+
+                .gfield_label {
+                    display:none;
+                    .gfield_required {
+                        display:none;
+                    }
+                }
+                .ginput_container {
+                    margin:0 !important;
+
+                    .name_first {
+                        padding-right:5px;
+                        padding-top: 0;
+                    }
+
+                    input {
+                        margin:0 !important;
+                        background: rgba($white, .5);
+                    }
+                }
+            }
+            .gform_footer {
+                margin: $half-gr 0 0;
+                padding: 0;
+                width: 48%;
+                margin-left: auto;
+
+                input {
+                    background: $white;
+                    color: $blue;
+                    border-color: $white;
+                    @include breakpoint(phablet) {
+                        font-size: 12px;
+                        padding:0;
+                    }
+                }
+                @include breakpoint(phablet) {
+                    width:41%;
+                }
+            }
+            @include breakpoint(phablet) {
+                width: 100%;
+            }
+        }
+
+        p {
+            padding-bottom: 2.508rem;
+            @include breakpoint(phablet) {
+                padding:0;
+                margin:0;
+            }
+        }
+    }
+}

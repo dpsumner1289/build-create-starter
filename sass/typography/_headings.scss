@@ -1,15 +1,5 @@
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
-    &.white_heading {
-        font-weight: lighter;
-        font-size: 35px;
-        line-height: 1.3em;
-        color:#fff;
-
-        b {
-            font-weight:700;
-        }
-	}
 	&.mod_title {
 		text-align: center;
 		font-weight: lighter;
@@ -28,11 +18,26 @@ h1, h2, h3, h4, h5, h6 {
 		}
 	}
 }
+h1, h3 {
+	color:$red;
+	position: relative;
+	padding-bottom: .89rem;
+	&:after {
+    	content: "";
+	    display: block;
+	    width: 12vw;
+	    border-bottom: 3px solid $red;
+	    position: absolute;
+	    left: 0%;
+	    bottom: 0;
+    }
+}
 h2 {
-	font-size: 1.75em;
+	color:$blue;
+	font-size: $golden_ratio;
 }
 h4 {
-	color: 990000;
+	color: $gunmetal;
 }
 
 .underlined {

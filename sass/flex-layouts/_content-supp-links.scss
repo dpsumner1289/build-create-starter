@@ -1,0 +1,57 @@
+.content-supp-links {
+    .item_2_3 {
+        padding:0 $golden_ratio;
+
+        h2 {
+            @include section-heading($red, left);
+        }
+    }
+    .links_sect {
+        padding: $half-gr;
+        background: $white;
+
+        h3 {
+            margin: 0;
+            color: $gunmetal;
+            text-transform: uppercase;
+
+            &:after {
+                display:none;
+            }
+        }
+        ul {
+            margin: 0;
+            padding: 0 6px;
+            
+            li {
+                list-style: none;
+                margin-bottom:6px;
+
+                a {
+                    color: $blue;
+                    @include ease();
+                    text-decoration: none;
+
+                    i {
+                        @include ease();
+                        margin-left: 8px;
+                    }
+                }
+                &:before {
+                    content: "\2014";
+                    margin-right: 5px;
+                    font-weight: lighter;
+                    margin-left: -5px;
+                }
+                &:hover {
+                    i {
+                        margin-left:20px;
+                    }
+                    a {
+                        color:$red;
+                    }
+                }
+            }
+        }
+    }
+}

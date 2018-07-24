@@ -1,0 +1,143 @@
+.sidebar-container {
+    background: $blue;
+    color: $white;
+    padding: .89rem;
+
+    h2 {
+        color:$white;
+        font-size:$golden_ratio;
+    }
+    a {
+        color:$white;
+    }
+}
+.blog {
+    .widget-area {
+        margin-top: -17.5rem;
+
+        .widget_categories {
+            margin-top: $golden_ratio;
+        }
+        @include breakpoint(phablet) {
+			margin-top: 0;
+		}
+    }
+}
+.single .widget-area, .blog .widget-area, .item_2_7.widget-area, .archive .widget-area {
+    padding: $golden_ratio;
+    
+    .author-section {
+        justify-content: flex-start;
+
+        .side-date {
+            transform: rotate(-90deg);
+            -webkit-transform: rotate(-90deg);
+            height: 45px;
+            font-size: 40px;
+            text-align: left;
+            text-transform: uppercase;
+            align-self: center;
+            color: #a4a5af;
+            font-weight: 200;
+            margin-left: -59px;
+
+            span {
+                font-weight:bold;
+            }
+        }
+        .author-image {
+            text-align: center;
+            text-transform: uppercase;
+            color:$blue;
+            margin-left: -30px;
+            
+            img {
+                margin-bottom:.89rem;
+            }
+        }
+        .author-social {
+            width:100%;
+            justify-content: flex-start;
+            margin-bottom:$golden_ratio;
+            padding-top: $golden_ratio;
+            margin-top: $golden_ratio;
+            border-top: 1px solid $gunmetal;
+        }
+    }
+    .widget-title {
+        margin-top: 0;
+        color:$gunmetal;
+    }
+    a.sb_social {
+        margin-right:$golden_ratio;
+        color:$blue;
+        font-size: $golden_ratio;
+        @include ease();
+
+        &:hover {
+            color:$red;
+        }
+    }
+    ul {
+        list-style:none;
+        border-left: 7px solid $gray;
+        padding-top: $half-gr;
+
+        li {
+            margin-bottom: $half-gr;
+            a {
+                text-decoration: none;
+            }
+        }
+
+        &:after {
+            @include clearfix();
+            @include clearfix-after();
+        }
+    }
+    .fp_cta_sidebar {
+        color:$white;
+        
+        ul { 
+            border-left: none;
+            padding-top: 0;
+        }
+        >.flex {
+            padding: 12px;
+            align-items: center;
+            background:rgba($blue, .75);
+
+            #issue {
+                padding-left:10px;
+            }
+        }
+        .description {
+            text-align: center;
+            padding: $half-gr;
+
+            p {
+                margin:0;
+            }
+        }
+        .gform_body {
+            padding:$half-gr;
+
+            .gform_fields {
+                >li.gfield {
+                    width: 100% !important;
+                    padding: 0 !important;
+                    margin:0 !important;
+    
+                    span {
+                        padding: 0;
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+        .gform_button {
+            margin: 0 !important;
+            max-width: 90% !important;
+        }
+    }
+}

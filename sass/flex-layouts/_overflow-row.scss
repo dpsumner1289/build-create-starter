@@ -1,0 +1,102 @@
+.overflow {
+    background-color: white;
+    position: relative;
+    padding: 0;
+    &.overflow-true {
+        margin-top: -12.5%;
+
+        .container-md-lg {
+            padding-top: 0;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    .content-half {
+        padding: $golden_ratio;
+        h2 {
+            @include section-heading($red, left);
+            margin-top: 0;
+        }
+        a {
+            color: $blue;
+            text-decoration: none;
+            display: block;
+            margin: $half-gr 0;
+            @include ease();
+            text-transform: uppercase;
+            &.button {
+                background-color: $blue;
+                color: white;
+                width: auto;
+                display: inline-block;
+                padding: $half-gr $golden_ratio;
+            }
+            i {
+                padding-left: 8px;
+                @include ease();
+            }
+            &:hover>i {
+                margin-left: 1em;
+                @include ease();
+            }
+        }
+        &.center_v {
+            align-self: center;
+        }
+        &.center_h {
+            justify-self: center;
+        }
+        &.center_text {
+            text-align: center;
+        h2 {
+            text-align: center;
+            text-transform: none;
+            font-weight:400;
+
+            &:after {
+                left: 50%;
+                margin-left: -100px;
+            }
+        }
+        }
+        &.white {
+            background-color:$white;
+        }
+    }
+    .fp-issue-form {
+        padding: 0 0 0 $golden_ratio;
+        .inner-container {
+            padding: 0 $golden_ratio $golden_ratio;
+            .heading {
+                justify-content: flex-start;
+                background: rgba(51, 102, 102, .8);
+                width: auto;
+                padding: $half-gr;
+                float: left;
+                margin-bottom: $golden_ratio;
+                span {
+                    margin: 0 0 0 $half-gr;
+                    color: white;
+                    text-transform: uppercase
+                }
+            }
+            .content {
+                clear: both;
+                font-size: 20px;
+                p {
+                    color: $white;
+                }
+            }
+            .gform_wrapper {
+                margin: 0;
+                .gform_footer {
+                    margin: 0;
+                    padding-bottom: 0;
+                }
+            }
+        }
+        @include breakpoint(phablet) {
+            padding:0 !important;
+        }
+    }
+}

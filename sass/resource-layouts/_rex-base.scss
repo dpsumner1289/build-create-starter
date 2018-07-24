@@ -1,0 +1,22 @@
+.single-resource {
+    .single-resource-header {
+        padding-bottom: 4.854rem;
+        .container {
+            text-align: left;
+
+            h1 {
+                color:$white;
+                padding-bottom: .89rem;
+                margin-bottom: 1.618rem;
+
+                &:after {
+                    border-bottom: 6px solid $white;
+                }
+            }
+
+            i {
+                color:$white;
+            }
+        }
+    }
+}

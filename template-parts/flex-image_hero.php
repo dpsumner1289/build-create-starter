@@ -15,24 +15,36 @@ $content_underline = $flex_content['content_underline'];
 $hero_bottom_border = $flex_content['hero_bottom_border'];
 
 $buttons = $flex_content['buttons'];
+$color = $flex_content['text_color'];
+
+$visit_us_on_button = $flex_content['visit_us_on_button'];
+$text = $visit_us_on_button['text'];
+$url = $visit_us_on_button['url'];
+$icon = $visit_us_on_button['icon'];
+$n_tab = $visit_us_on_button['new_tab'];
+
+$n_tab ? $n_tab = 'target="_blank"' : $n_tab = '';
 
 if($add_padding_above){$add_padding_above = 'add_padding_above';}
 if($content_underline){$content_underline = 'underlined';}
 ?>
 
-<div class="flex-hero flex row banner-inner fs-<?php echo $height; ?> overlay-<?php echo $overlay; ?> border-<?php echo $hero_bottom_border['color'] . ' bwidth-' . $hero_bottom_border['width']; ?>" style="background-image:url(<?php echo $background_image['url']; ?>)">
+<section class="flex-hero flex row vc banner-inner fs-<?php echo $height; ?> overlay-<?php echo $overlay; ?> border-<?php echo $hero_bottom_border['color'] . ' bwidth-' . $hero_bottom_border['width']; ?>" style="background-image:url(<?php echo $background_image['url']; ?>)">
 	<div class="outer-wrapper">
 		<div class="container <?php echo $container_size; ?>">
 			<div class="inner-wrapper <?php echo $content_underline; ?>">
 			<?php 
 			if($heading) {
-				echo '<h1 class="underline-'.$heading["underline"]." ".$add_padding_above.'" >'.$heading["heading_text"].'</h1>';
+				echo '<h1 class="underline-'.$heading["underline"].' '.$color.' '.$add_padding_above.'">'.$heading["heading_text"].'</h1>';
 			}
 			if($subheading) {
-				echo '<p class="narrow">'.$subheading.'</p>';	
+				echo '<p class="narrow '.$color.'">'.$subheading.'</p>';	
 			}	
 			?>
 			<?php 
+			if(!empty($text)):
+				echo '<a href="'.$url.'" class="social-visit" '.$n_tab.'>'.$icon.' '.$text.'</a>';
+			endif;
 			if(!empty($buttons)):
 				echo '<div class="hero_buttons container container-xsm">';
 				foreach($buttons as $button){
@@ -50,4 +62,4 @@ if($content_underline){$content_underline = 'underlined';}
 			</div> <!-- .inner-wrapper -->
 		</div> <!-- .container -->
 	</div> <!-- .outer-wrapper -->
-</div> <!-- .flex-hero -->
+</section> <!-- .flex-hero -->

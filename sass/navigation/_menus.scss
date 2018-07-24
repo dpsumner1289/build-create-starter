@@ -1,8 +1,7 @@
 .main-navigation {
-	display: inline-block;
-	width: 60%;
-	vertical-align: middle;
-	text-align: right;
+	padding: .89rem;
+	text-transform: uppercase;
+    font-weight: lighter;
 
 	ul {
 		list-style: none;
@@ -36,9 +35,11 @@
 					opacity: 1;
 					transition:.3s all ease;
 				}
-				&:hover {
-					background: $red;
-					color:#fff;
+				a {
+					@include ease();
+				}
+				&:hover a {
+					color: $blue;
 					transition:.3s all ease;
 				}
 			}
@@ -82,23 +83,18 @@
 		position: relative;
 		padding:.35rem .89rem;
 		text-align:left;
-		&:not(:first-child) {
-		    margin-left: 5vw;
-		}
-		&:hover {
-			background: $red;
+
+		&:hover a {
+			color: $red;
 			transition:.3s all ease;
-		}
-		&:hover > a,
-		&.focus > a {
-			color:#fff;
 		}
 	}
 
 	a {
 		display: block;
 		text-decoration: none;
-		color:$red;
+		color:$gunmetal;
+		@include ease();
 	}
 
 	.menu-menu-header-container {
@@ -109,6 +105,7 @@
 	.current-menu-item > a,
 	.current_page_ancestor > a,
 	.current-menu-ancestor > a {
+		color: $red;
 	}
 }
 

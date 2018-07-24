@@ -1,21 +1,19 @@
 .locations {
     .outer-wrapper {
         margin: 4rem 0 1rem;
-
         .inner-wrapper {
             .location_1_3 {
                 text-align: center;
                 height: 22vw;
                 position: relative;
-                transition: .3s all ease;
-                overflow:hidden;
-
+                @include ease();
+                overflow: hidden;
                 .inner_location {
-                    width:100%;
-                    height:100%;
+                    width: 100%;
+                    height: 100%;
                     background-position: 50%;
                     background-size: cover;
-                    transition: .3s all ease;
+                    @include ease();
                     &:after {
                         content: "";
                         position: absolute;
@@ -23,18 +21,17 @@
                         top: 0;
                         right: 0;
                         bottom: 0;
-                        background: rgba(0, 51, 102,.5);
+                        background: rgba(0, 51, 102, .5);
                     }
                 }
-
                 &:not(:last-child) {
                     border-right: 5px solid white;
                 }
-                &:hover > h4, &:hover > .inner_location {
+                &:hover>h4,
+                &:hover>.inner_location {
                     transform: scale(1.2);
-                    transition: .3s all ease;
+                    @include ease();
                 }
-
                 h4 {
                     display: inline-block;
                     padding: .5rem 1rem;
@@ -43,17 +40,17 @@
                     font-size: 2vw;
                     font-weight: 500;
                     z-index: 1;
-                    transition: .3s all ease;
+                    @include ease();
                     position: relative;
                     @include breakpoint(phablet) {
-                        font-size:25px;
+                        font-size: 25px;
                     }
                 }
                 &.item_1_3 {
                     @include breakpoint(phablet) {
-                        width:100%;
+                        width: 100%;
                         border-right: none;
-                        margin:.5px 0;
+                        margin: .5px 0;
                         height: 35vh;
                     }
                 }
@@ -67,18 +64,17 @@
         font-size: 1.8vw;
         font-weight: 300;
         text-align: center;
-
         @include breakpoint(tablet) {
-            font-size:30px;
+            font-size: 30px;
         }
         @include breakpoint(phablet) {
-            font-size:20px;
-            padding:.89rem 1.618rem;
+            font-size: 20px;
+            padding: .89rem 1.618rem;
         }
     }
     @include breakpoint(phablet) {
         >.container {
-            padding:0;
+            padding: 0;
         }
     }
 }

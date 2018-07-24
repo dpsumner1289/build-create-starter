@@ -9,6 +9,9 @@
                 background: #fbfbfb;
                 margin-top: 0;
             }
+            input[type="text"] {
+                padding:10px !important;
+            }
             select {
                 padding: 5px 4px;
             }
@@ -45,22 +48,6 @@
                     select {
                         width:100%;
                     }
-
-                    // &:after {
-                    //     font-family: 'Font Awesome 5 Free';
-                    //     content:"\f107";
-                    //     position: absolute;
-                    //     right: 2.5px;
-                    //     top: 11%;
-                    //     transition: .3s all ease;
-                    //     font-size: 16px;
-                    // }
-                    // &:focus, &:active {
-                    //     &:after {
-                    //         transform: rotate(180deg);
-                    //         transition: .3s all ease;
-                    //     }
-                    // }
                 }
             }
         }
@@ -75,24 +62,98 @@
     }
     .gform_footer {
         text-align: center;
+        margin-top:0;
 
         input {
-            background: $red;
-            border-radius: 4px;
-            padding: .9rem 1.618rem;
-            color: #fff;
+            background: $blue;
+            border-radius: 0;
+            padding: $half-gr $golden_ratio;
+            color: $white;
             text-transform: uppercase;
             cursor: pointer;
-            border-color: $red;
-            transition: .3s all ease;
+            border-color: $blue;
+            @include ease();
+            width: 100% !important;
 
             &:hover {
                 transition:.3s all ease;
-                background: #fff;
+                background: $white;
                 color:$red;
             }
             &:focus {
-                outline: #333 auto 5px;
+                outline: $gunmetal auto 5px;
+            }
+        }
+    }
+}
+
+.blog-header {
+    .item_1_3 {
+        .gform_wrapper {
+            margin-bottom: 0;
+
+            #gform_2 {
+                @extend .flex;
+                @extend .vc;
+                .gform_body {
+                    width:60%;
+                    li.gfield {
+                        margin: 0;
+                        padding: 0;
+
+                        .gfield_label {
+                            display:none;
+                        }
+                        .ginput_container_email {
+                            margin:0;
+
+                            input {
+                                width:100%;
+                                border: 1px solid $red;
+                            }
+                        }
+                    }
+                }
+                .gform_footer {
+                    width: 40%;
+                    clear: none;
+                    margin: 0;
+                    padding: 0;
+                    position: relative;
+                    text-align: right;
+
+                    input {
+                        margin:0;
+                        background-color: $red;
+                        border: 1px solid $red;
+                        @include ease();
+                        font-weight: lighter;
+                        padding-left: 35px;
+                        padding-right: $half-gr;
+
+                        &:hover {
+                            color:$white;
+                            background-color:$blue;
+                            border-color:$blue;
+                        }
+                        @include breakpoint(tablet) {
+                            font-size: 12px;
+                        }
+                    }
+
+                    &:before {
+                        content: "\f0e0";
+                        font-family: 'Font Awesome 5 Free';
+                        position: absolute;
+                        color: white;
+                        top: 12px;
+                        left: 24px;
+                        @include breakpoint(tablet) {
+                            top: 18px;
+                            left: 11px;
+                        }
+                    }
+                }
             }
         }
     }

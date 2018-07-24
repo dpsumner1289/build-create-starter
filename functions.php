@@ -7,7 +7,7 @@
  * @package build/create_-_nrc
  */
 
-if ( ! function_exists( 'build_create_nrc_setup' ) ) :
+if ( ! function_exists( 'build_create_starter_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -15,7 +15,7 @@ if ( ! function_exists( 'build_create_nrc_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function build_create_nrc_setup() {
+	function build_create_starter_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -61,7 +61,7 @@ if ( ! function_exists( 'build_create_nrc_setup' ) ) :
 		) );
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'build_create_nrc_custom_background_args', array(
+		add_theme_support( 'custom-background', apply_filters( 'build_create_starter_custom_background_args', array(
 			'default-color' => 'ffffff',
 			'default-image' => '',
 		) ) );
@@ -82,7 +82,7 @@ if ( ! function_exists( 'build_create_nrc_setup' ) ) :
 		) );
 	}
 endif;
-add_action( 'after_setup_theme', 'build_create_nrc_setup' );
+add_action( 'after_setup_theme', 'build_create_starter_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -91,41 +91,63 @@ add_action( 'after_setup_theme', 'build_create_nrc_setup' );
  *
  * @global int $content_width
  */
-function build_create_nrc_content_width() {
+function build_create_starter_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'build_create_nrc_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'build_create_starter_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'build_create_nrc_content_width', 0 );
+add_action( 'after_setup_theme', 'build_create_starter_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function build_create_nrc_widgets_init() {
+function build_create_starter_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'build-create-nrc' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'build-create-nrc' ),
+		'name'          => esc_html__( 'Post Sidebar', 'build-create-nrc' ),
+		'id'            => 'sidebar-post',
+		'description'   => esc_html__( 'Add widgets here for post sidebar.', 'build-create-nrc' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Page Sidebar', 'build-create-nrc' ),
+		'id'            => 'sidebar-page',
+		'description'   => esc_html__( 'Add widgets here for page sidebar.', 'build-create-nrc' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Resource Sidebar', 'build-create-nrc' ),
+		'id'            => 'sidebar-resource',
+		'description'   => esc_html__( 'Add widgets here for resource sidebar.', 'build-create-nrc' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'build_create_nrc_widgets_init' );
+add_action( 'widgets_init', 'build_create_starter_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function build_create_nrc_scripts() {
+function build_create_starter_scripts() {
 	
 	//#- Styles
 	wp_enqueue_style( 'font-style', get_stylesheet_directory_uri().'/assets/fonts/font.css' );
 	wp_enqueue_style( 'font-awesome-style', get_stylesheet_directory_uri().'/assets/fontawesome-free-5.0.9/web-fonts-with-css/css/fontawesome-all.css' );
 	wp_enqueue_style( 'build-create-nrc-style', get_stylesheet_uri() );
+
+	//##-- Owl Carousel Styles
+	wp_enqueue_style( 'owl-styles', get_stylesheet_directory_uri().'/owl-carousel/owl.carousel.min.css' );
+	wp_enqueue_style( 'owl-theme-styles', get_stylesheet_directory_uri().'/owl-carousel/owl.theme.default.min.css' );
 	
 	//##-- mmenu styles
 	wp_enqueue_style( 'mmenu-style', get_stylesheet_directory_uri().'/inc/mmenu/dist/jquery.mmenu.all.css' );
@@ -138,21 +160,41 @@ function build_create_nrc_scripts() {
 	//##-- mmenu scripts
 	wp_enqueue_script( 'mmenu', get_template_directory_uri() . '/inc/mmenu/dist/jquery.mmenu.all.js', array('jquery'), null, true );
 
-	wp_enqueue_script( 'layouts', get_template_directory_uri() . '/js/layouts.js', array('jquery'), null, true );
+	wp_enqueue_script( 'layouts', get_template_directory_uri() . '/js/layouts-min.js', array('jquery'), null, true );
 
 	//##-- Animations
-	wp_enqueue_script( 'counter', get_template_directory_uri() . '/js/animations/counter.js', array('jquery'), null, true );
+	wp_enqueue_script( 'counter', get_template_directory_uri() . '/js/animations/counter-min.js', array('jquery'), null, true );
 
 	//##-- Custom Functionality
-	wp_enqueue_script( 'feature-list', get_template_directory_uri() . '/js/custom-functionality/feature-list.js', array('jquery'), null, true );
-	wp_enqueue_script( 'tabs', get_template_directory_uri() . '/js/custom-functionality/tabs.js', array('jquery'), null, true );
-	wp_enqueue_script( 'mmenu-custom', get_template_directory_uri() . '/js/custom-functionality/mmenu-custom.js', array('jquery'), null, true );
+	wp_enqueue_script( 'feature-list', get_template_directory_uri() . '/js/custom-functionality/feature-list-min.js', array('jquery'), null, true );
+	wp_enqueue_script( 'tabs', get_template_directory_uri() . '/js/custom-functionality/tabs-min.js', array('jquery'), null, true );
+	wp_enqueue_script( 'mmenu-custom', get_template_directory_uri() . '/js/custom-functionality/mmenu-custom-min.js', array('jquery'), null, true );
+	wp_enqueue_script( 'scroll', get_template_directory_uri() . '/js/custom-functionality/scroll-min.js', array('jquery'), null, true );
+
+	//##-- Owl Carousel
+
+	wp_enqueue_script( 'owl-slider', get_template_directory_uri() . '/owl-carousel/owl.carousel.min.js', array('jquery'), null, true );	
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'build_create_nrc_scripts' );
+add_action( 'wp_enqueue_scripts', 'build_create_starter_scripts' );
+
+/**
+ * Link all post thumbnails to the post permalink.
+ *
+ * @param string $html          Post thumbnail HTML.
+ * @param int    $post_id       Post ID.
+ * @param int    $post_image_id Post image ID.
+ * @return string Filtered post image HTML.
+ */
+
+function wpdocs_post_image_html( $html, $post_id, $post_image_id ) {
+    $html = '<a href="' . get_permalink( $post_id ) . '" alt="' . esc_attr( get_the_title( $post_id ) ) . '">' . $html . '</a>';
+    return $html;
+}
+add_filter( 'post_thumbnail_html', 'wpdocs_post_image_html', 10, 3 );
 
 /**
  * Implement the Custom Header feature.
@@ -187,8 +229,10 @@ include (trailingslashit(get_template_directory()).'inc/custom-functions.php');
 /**
  * Add custom post types
  */
-include (trailingslashit(get_template_directory()).'cpts/location-post-type.php');
+include (trailingslashit(get_template_directory()).'cpts/focal-point-issue-post-type.php');
 include (trailingslashit(get_template_directory()).'cpts/review-post-type.php');
+include (trailingslashit(get_template_directory()).'cpts/resource-post-type.php');
+include (trailingslashit(get_template_directory()).'cpts/faq-post-type.php');
 
 /**
  * Add Gravity Forms functionality

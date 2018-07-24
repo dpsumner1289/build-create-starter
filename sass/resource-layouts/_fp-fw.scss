@@ -1,0 +1,56 @@
+.fp_cta_fw {
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .item_1_4 {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding:$golden_ratio;
+        background-color:rgba($blue, .88);
+
+        #issue {
+            text-transform: uppercase;
+            color: white;
+            margin-top: 5px;
+        }
+    }
+    .item_3_4_2 {
+        padding:$half-gr;
+        color:$white;
+
+        .gform_wrapper {
+            margin:0 !important;
+            
+            .gfield {
+                margin:0 !important;
+
+                .gfield_label {
+                    display:none;
+                    .gfield_required {
+                        display:none;
+                    }
+                }
+                .ginput_container {
+                    margin:0 !important;
+
+                    .name_first {
+                        padding-right:5px;
+                        padding-top: 0;
+                    }
+
+                    input {
+                        margin:0 !important;
+                    }
+                }
+            }
+            .gform_footer {
+                margin: $half-gr 0 0;
+                padding: 0;
+                width: 48%;
+                margin-left: auto;
+            }
+        }
+    }
+}

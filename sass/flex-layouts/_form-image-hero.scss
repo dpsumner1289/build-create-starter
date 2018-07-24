@@ -1,0 +1,7 @@
+.flex-hero-form {
+    @include breakpoint(phablet) {
+        .gform_wrapper {
+            width: 100%;
+        }
+    }
+}

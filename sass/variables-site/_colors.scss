@@ -1,5 +1,41 @@
-$blue: #003366;
-$red: #990000;
+$blue: #3878b0;
+$darkblue: #003973;
+$darkgreen: #313f3f;
+$gold: #ccbb8d;
+$gray: #a4a5af;
+$green: #5fab42;
+$gunmetal: #313f3f;
+$orange: #f36b22;
+$red: #ce5360;
+$redbrown:#823313;
+$warmth: #f8f5e6;
+$white: #ffffff;
+$yellow: #fc9a1c;
+
+section.blue {
+    background-color:$blue;
+}
+section.orange {
+    background-color:$orange;
+}
+section.darkblue {
+    background-color:$darkblue;
+}
+section.redbrown {
+    background-color:$redbrown;
+}
+section.green {
+    background-color:$green;
+}
+section.yellow {
+    background-color:$yellow;
+}
+section.warmth {
+    background-color:$warmth;
+}
+section.white {
+    background-color:$white;
+}
 
 $color__background-body: #fff;
 $color__background-screen: #f1f1f1;
@@ -9,15 +45,15 @@ $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
 $color__text-screen: #21759b;
-$color__text-input: #666;
+$color__text-input: $gray;
 $color__text-input-focus: #111;
 $color__link: $blue;
 $color__link-visited: $red;
 $color__link-hover: $red;
-$color__text-main: #333333;
+$color__text-main: $gunmetal;
 
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
-$color__border-input: #ccc;
-$color__border-abbr: #666;
+$color__border-input: $gray;
+$color__border-abbr: $gunmetal;

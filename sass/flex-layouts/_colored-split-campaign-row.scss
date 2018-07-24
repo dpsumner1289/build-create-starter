@@ -1,0 +1,73 @@
+.colored_split_campaign_row {
+    min-height:400px;
+    border-top: 5px solid $warmth;
+
+    &.blue {
+        background-color:$blue;
+    }
+    &.orange {
+        background-color:$orange;
+    }
+    &.darkblue {
+        background-color:$darkblue;
+    }
+    &.redbrown {
+        background-color:$redbrown;
+    }
+    &.green {
+        background-color:$green;
+    }
+    &.yellow {
+        background-color:$yellow;
+    }
+    .first {
+        order:1;
+    }
+    .second {
+        order:2;
+        border-left:5px solid $warmth;
+    }
+    .image_side {
+        justify-content: center;
+        background-size: cover;
+        background-position: 50%;
+    }
+    .content_side {
+        padding:$golden_ratio;
+
+        .content {
+            color:$white;
+
+            &:after {
+                content:"";
+                width:200px;
+                border-top:3px solid $white;
+                margin-right:auto;
+                clear:both;
+                display:block;
+                margin-bottom:$golden_ratio;
+            }
+        }
+        .button {
+            padding: $half-gr 3.236rem;
+            border: 1px solid $white;
+        }
+    }
+    .center_container {
+        align-self: center;
+    }
+    @include breakpoint(phablet) {
+        -webkit-flex-flow: row wrap;
+
+        .second {
+            order:1;
+            border-left:none;
+        }
+        .first {
+            order:1;
+        }
+        .image_side {
+            padding: 0 .89rem;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+.content_anchored_sidebar {
+    .item_2_3 {
+        padding:0 $golden_ratio $half-gr;
+
+        h2 {
+            @include section-heading($red, left);
+        }
+    }
+    .item_1_3 {
+        .bluebox {
+            background-color:$blue;
+            color:$white;
+            padding:$half-gr;
+
+            h4 {
+                color:$white;
+            }
+            a.anchor_link{
+                text-decoration: none;
+                display:block;
+                color:$white;
+                margin-bottom:12px;
+                i {
+                    padding-left: 8px;
+                    @include ease();
+                }
+                &:hover {
+                    i {
+                        margin-left: 1em;
+                        @include ease();
+                    }
+                }
+            } 
+        }
+    }
+}

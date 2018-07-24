@@ -1,0 +1,8 @@
+{
+    "editor.wordWrap": "on",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.smoothScrolling": true,
+    "auto-close-tag.SublimeText3Mode": true,
+    "phpcs.enable": false,
+    "phpcs.showWarnings": false
+}

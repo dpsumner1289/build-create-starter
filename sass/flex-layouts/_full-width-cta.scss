@@ -1,22 +1,62 @@
 .cta-fw {
-	.container {
-		text-align: center;
-		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#003366+0,003366+57,ffffff+100&1+0,0+81,0+100 */
-
-		.blue {
-			background-color: $blue;
-			color:#fff;
-			box-shadow:none;
-			border: 1px solid #003333;
-			padding-left: 1.618rem;
-			padding-right: 1.618rem;
-			transition:.3s all ease;
-
-			&:hover {
-				color:$red;
-				background-color:#fff;
-				transition:.3s all ease;
-			}
-		}
-	}
+    .container {
+        text-align: center;
+        h2 {
+            @include section-heading($red, center);
+        }
+        .blue {
+            background-color: $blue;
+            color: #fff;
+            box-shadow: none;
+            border: 1px solid #003333;
+            padding:$half-gr $golden_ratio;
+            @include ease();
+            &:hover {
+                color: $red;
+                background-color: #fff;
+                @include ease();
+            }
+        }
+    }
+    &.white {
+        .container {
+            h2 {
+                @include section-heading($white, center);
+            }
+            p {
+                color:$white;
+            }
+        }
+    }
+    &.red {
+        .container {
+            h2 {
+                @include section-heading($red, center);
+            }
+            p {
+                color:$red;
+            }
+        }
+    }
+    &.blue {
+        .container {
+            h2 {
+                @include section-heading($blue, center);
+            }
+            p {
+                color:$blue;
+            }
+        }
+    }
+    &.gunmetal {
+        .container {
+            h2 {
+                @include section-heading($gunmetal, center);
+            }
+            p {
+                color:$gunmetal;
+            }
+        }
+    }
+    
 }
